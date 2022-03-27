@@ -2,14 +2,28 @@ import { Entity, Scene } from "aframe-react";
 import "babel-polyfill";
 import { registerComponent } from "aframe";
 import "@ar-js-org/ar.js";
+import { useEffect } from "react";
 
 registerComponent("a-marker", {});
 
 function App() {
+  useEffect(() => {
+    window.navigator.geolocation.getCurrentPosition((position) => {
+      console.log(position);
+    });
+    window.navigator.geolocation.watchPosition((position) => {
+      console.log(position);
+    });
+  }, []);
+
   return (
     <div style={{ width: "100vw", height: "100vh" }}>
       <Scene vr-mode-ui="enabled: false">
-        <a-scene embedded vr-mode-ui="enabled: false" arjs>
+        <a-scene
+          embedded
+          vr-mode-ui="enabled: false"
+          arjs="sourceType: webcam; debugUIEnabled: false;"
+        >
           <Entity primitive="a-camera" gps-camera rotation-reader></Entity>
           <a-text
             value="Sky tree"
