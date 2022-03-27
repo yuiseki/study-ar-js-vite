@@ -68,7 +68,7 @@ function App() {
       ></a-camera>
       {latitude && longitude && (
         <>
-          {Array.from(Array(25).keys()).map((i) => {
+          {Array.from(Array(10).keys()).map((i) => {
             return (
               <>
                 {
@@ -121,7 +121,7 @@ function App() {
                     height={100}
                     depth={100}
                     scale="1 1 1"
-                    position={`${0} ${altitude - 200} ${100 * i + 300}`}
+                    position={`${0} ${altitude - 200} ${100 * i + 200}`}
                     rotation="0 0 0"
                     look-at="[gps-camera]"
                     gps-entity-place={`latitude: ${latitude}; longitude: ${longitude};`}
@@ -135,7 +135,77 @@ function App() {
                     height={100}
                     depth={100}
                     scale="1 1 1"
-                    position={`${100} ${altitude - 200} ${100 * i + 300}`}
+                    position={`${100} ${altitude - 200} ${100 * i + 200}`}
+                    rotation="0 0 0"
+                    look-at="[gps-camera]"
+                    gps-entity-place={`latitude: ${latitude}; longitude: ${longitude};`}
+                  ></a-box>
+                </>
+                {
+                  //
+                  // 西
+                  //
+                }
+                <>
+                  <a-box
+                    color={`rgb(${Math.floor(
+                      Math.random() * (100 + 1) + 1
+                    )}, 255, 0)`}
+                    opacity={0.5}
+                    width={100}
+                    height={100}
+                    depth={100}
+                    scale="1 1 1"
+                    position={`${-100 * i - 100} ${altitude - 200} ${100}`}
+                    rotation="0 0 0"
+                    look-at="[gps-camera]"
+                    gps-entity-place={`latitude: ${latitude}; longitude: ${longitude};`}
+                  ></a-box>
+                  <a-box
+                    color={`rgb(255, ${Math.floor(
+                      Math.random() * (100 + 1) + 1
+                    )}, 0)`}
+                    opacity={0.5}
+                    width={100}
+                    height={100}
+                    depth={100}
+                    scale="1 1 1"
+                    position={`${-100 * i - 100} ${altitude - 200} ${0}`}
+                    rotation="0 0 0"
+                    look-at="[gps-camera]"
+                    gps-entity-place={`latitude: ${latitude}; longitude: ${longitude};`}
+                  ></a-box>
+                </>
+                {
+                  //
+                  // 北
+                  //
+                }
+                <>
+                  <a-box
+                    color={`rgb(255, 0,${Math.floor(
+                      Math.random() * (100 + 1) + 1
+                    )})`}
+                    opacity={0.5}
+                    width={100}
+                    height={100}
+                    depth={100}
+                    scale="1 1 1"
+                    position={`${0} ${altitude - 200} ${-100 * i - 100}`}
+                    rotation="0 0 0"
+                    look-at="[gps-camera]"
+                    gps-entity-place={`latitude: ${latitude}; longitude: ${longitude};`}
+                  ></a-box>
+                  <a-box
+                    color={`rgb(${Math.floor(
+                      Math.random() * (100 + 1) + 1
+                    )}, 255, 255)`}
+                    opacity={0.5}
+                    width={100}
+                    height={100}
+                    depth={100}
+                    scale="1 1 1"
+                    position={`${100} ${altitude - 200} ${-100 * i - 100}`}
                     rotation="0 0 0"
                     look-at="[gps-camera]"
                     gps-entity-place={`latitude: ${latitude}; longitude: ${longitude};`}
