@@ -31,7 +31,7 @@ function App() {
         ></Entity>
         {latitude && longitude && (
           <a-box
-            color="yellow"
+            material="color: yellow"
             position="0 30 0"
             gps-projected-entity-place={`latitude: ${latitude}; longitude: ${longitude};`}
           ></a-box>
