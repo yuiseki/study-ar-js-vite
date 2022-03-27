@@ -41,8 +41,6 @@ function App() {
       <a-camera
         gps-camera="gpsMinDistance: 5; minDistance:10; maxDistance:10000"
         rotation-reader
-        simulateLatitude={latitude}
-        simulateLongitude={longitude}
       ></a-camera>
       {latitude && longitude && (
         <>
