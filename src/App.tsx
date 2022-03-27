@@ -9,9 +9,6 @@ function App() {
     window.navigator.geolocation.getCurrentPosition((position) => {
       console.log(position);
     });
-    window.navigator.geolocation.watchPosition((position) => {
-      console.log(position);
-    });
   }, []);
 
   return (
@@ -23,19 +20,19 @@ function App() {
       >
         <Entity
           primitive="a-camera"
-          gps-camera="gpsMinDistance:10; minDistance:30; maxDistance:10000"
+          gps-camera="gpsMinDistance:10; minDistance:10; maxDistance:10000;"
           rotation-reader
         ></Entity>
         <a-text
           value="test"
           look-at="[gps-camera]"
-          scale="120 120 120"
+          scale="200 200 200"
           gps-entity-place="latitude: 35.727593; longitude: 139.790962;"
         ></a-text>
         <a-text
           value="Sky tree"
           look-at="[gps-camera]"
-          scale="120 120 120"
+          scale="300 300 300"
           gps-entity-place="latitude: 35.710063; longitude: 139.8107;"
         ></a-text>
       </a-scene>
