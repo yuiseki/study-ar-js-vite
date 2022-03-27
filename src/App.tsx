@@ -117,19 +117,34 @@ function App() {
           })}
         </>
       )}
+      {/*
       <a-text
-        value="Sky tree"
         color="blue"
         align="center"
         anchor="align"
         baseline="center"
         side="double"
-        scale="1000 1000 1000"
-        position={`0 ${altitude - 20} 300`}
+        scale="100 100 100"
+        position={`100 ${altitude - 100} 200`}
         rotation={`0 ${rotation} 0`}
         look-at="[gps-camera]"
-        gps-entity-place="latitude: 35.710063; longitude: 139.8107;"
+        gps-entity-place="latitude: 35.71034; longitude: 139.8112;"
+        value="Tokyo Sky Tree"
       ></a-text>
+      <a-text
+        color="blue"
+        align="center"
+        anchor="align"
+        baseline="center"
+        side="double"
+        scale="100 100 100"
+        position={`100 ${altitude - 100} 200`}
+        rotation={`0 ${rotation} 0`}
+        look-at="[gps-camera]"
+        gps-entity-place="latitude: 35.6566376; longitude: 139.7459452;"
+        value="Tokyo Tower"
+      ></a-text>
+        */}
     </a-scene>
   );
 }
