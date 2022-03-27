@@ -124,7 +124,7 @@ function App() {
         anchor="align"
         baseline="center"
         side="double"
-        scale="100 100 100"
+        scale="1000 1000 1000"
         position={`0 ${altitude - 20} 300`}
         rotation={`0 ${rotation} 0`}
         look-at="[gps-camera]"
