@@ -1,13 +1,19 @@
-import { Entity, Scene } from "aframe-react";
+import { Entity } from "aframe-react";
 import "babel-polyfill";
-import { registerComponent } from "aframe";
 import "@ar-js-org/ar.js";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [latitude, setLatitude] = useState<number>();
+  const [longitude, setLongitude] = useState<number>();
+
   useEffect(() => {
     window.navigator.geolocation.getCurrentPosition((position) => {
-      console.log(position);
+      console.log(position.coords.latitude);
+      setLatitude(position.coords.latitude);
+      console.log(position.coords.longitude);
+      setLongitude(position.coords.longitude);
+      console.log(position.coords.altitude);
     });
   }, []);
 
@@ -16,13 +22,20 @@ function App() {
       <a-scene
         embedded
         vr-mode-ui="enabled: false"
-        arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
+        arjs="sourceType: webcam; debugUIEnabled: false;"
       >
         <Entity
           primitive="a-camera"
           gps-camera="gpsMinDistance:10; minDistance:10; maxDistance:10000;"
           rotation-reader
         ></Entity>
+        {latitude && longitude && (
+          <a-box
+            color="yellow"
+            position="0 30 0"
+            gps-projected-entity-place={`latitude: ${latitude}; longitude: ${longitude};`}
+          ></a-box>
+        )}
         <a-text
           value="test"
           look-at="[gps-camera]"
