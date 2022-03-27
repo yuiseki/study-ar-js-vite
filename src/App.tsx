@@ -24,7 +24,11 @@ function App() {
           vr-mode-ui="enabled: false"
           arjs="sourceType: webcam; debugUIEnabled: false;"
         >
-          <Entity primitive="a-camera" gps-camera rotation-reader></Entity>
+          <Entity
+            primitive="a-camera"
+            gps-camera="minDistance:30; maxDistance:10000"
+            rotation-reader
+          ></Entity>
           <a-text
             value="Sky tree"
             look-at="[gps-camera]"
