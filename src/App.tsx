@@ -26,7 +26,7 @@ function App() {
         >
           <Entity
             primitive="a-camera"
-            gps-camera="minDistance:30; maxDistance:10000"
+            gps-camera="gpsMinDistance:10; minDistance:30; maxDistance:10000"
             rotation-reader
           ></Entity>
           <a-text
